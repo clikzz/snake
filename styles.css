@@ -1,0 +1,147 @@
+/* PALETA DE COLORES
+    #201E43 Azul Oscuro
+    #134B70 Azul
+    #508C9B Turquesa
+    #EEEEEE Gris Claro
+*/
+
+
+* {
+    font-family: 'Inconsolata', monospace;
+    font-weight: 800;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Asegúrate de que el body ocupe toda la altura de la ventana */
+    margin: 0; /* Eliminar márgenes predeterminados */
+    background-color: #EEEEEE; /* Fondo gris claro */
+    font-family: 'Inconsolata', monospace;
+    font-weight: 800;
+}
+
+#tablero, .infoTablero {
+    max-width: 500px;
+}
+
+#tablero {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    border: #134B70;
+    border-width: 2px;
+    border-style: solid;
+    position: relative;
+    width: 500px; /* Ajusta el tamaño del tablero según sea necesario */
+    height: 500px;
+
+}
+
+#comenzar, .infoTablero {
+    font-size: 30px;
+}
+
+#juegoTerminado {
+    display: none;
+    color: rgb(194, 3, 3);
+    font-size: 30px;
+    position: absolute; /* Posicionar absolutamente dentro del contenedor */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar para centrar exactamente */
+    background-color: rgba(255, 255, 255, 0.144); /* Fondo semitransparente para mejor visibilidad */
+    padding: 20px; /* Añadir padding para mejor apariencia */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto */
+}
+
+.infoTablero {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    position: absolute; /* Posicionar absolutamente dentro del contenedor */
+    top: 100px; /* Ajusta la posición vertical */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar para centrar exactamente */
+}
+
+#comenzar {
+    appearance: button;
+    background-color: #201E43;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 0px 16px;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+}
+
+#comenzar:after {
+  background-clip: padding-box;
+  background-color: #134B70;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#comenzar:main,
+#comenzar:focus {
+  user-select: auto;
+}
+
+#comenzar:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+#comenzar:disabled {
+  cursor: auto;
+}
+
+#comenzar:active {
+  border-width: 4px 0 0;
+  background: none;
+}
+
+#puntuacion {
+    display: inline-flex;
+}
+
+#cont-puntuacion{
+    margin-left: 50px;
+}
+
+.square {
+    aspect-ratio: 1;
+}
+
+.emptySquare {
+    background-color: #508C9B;
+}
+
+.snakeSquare {
+    background-color: #134B70;
+}
+
+.foodSquare {
+    background-color: #201E43;
+}
+
