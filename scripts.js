@@ -78,7 +78,7 @@ const drawSnake = () => {
 };
 
 const updateScore = () => {
-    scoreBoard.innerText = score;
+    scoreBoard.innerText = `Puntuación: ${score}`;
 }
 
 const createRandomFood = () => {

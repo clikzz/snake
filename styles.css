@@ -26,16 +26,22 @@ body {
     max-width: 500px;
 }
 
+#tablero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
 #tablero {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    border: #134B70;
-    border-width: 2px;
-    border-style: solid;
+    width: 500px; /* Tamaño fijo para el tablero */
+    height: 500px; /* Tamaño fijo para el tablero */
     position: relative;
-    width: 500px; /* Ajusta el tamaño del tablero según sea necesario */
-    height: 500px;
-
+    background-color: #f0f0f0; /* Fondo para visualizar mejor */
+    margin-bottom: 20px; /* Espacio entre el tablero y los controles */
 }
 
 #comenzar, .infoTablero {
@@ -59,11 +65,8 @@ body {
 .infoTablero {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
-    position: absolute; /* Posicionar absolutamente dentro del contenedor */
-    top: 100px; /* Ajusta la posición vertical */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translateX(-50%); /* Ajustar para centrar exactamente */
+    width: 500px; /* Asegurar que ocupe el mismo ancho que el tablero */
+    margin-top: 20px; /* Ajusta el margen según sea necesario */
 }
 
 #comenzar {
@@ -75,31 +78,21 @@ body {
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    display: inline-block;
-    letter-spacing: .8px;
-    line-height: 20px;
-    margin: 0;
-    outline: none;
-    overflow: visible;
-    padding: 0px 16px;
-    touch-action: manipulation;
-    transform: translateZ(0);
-    transition: filter .2s;
+    padding: 10px 20px; /* Añadir padding para mejor apariencia */
+    position: relative; /* Necesario para el pseudo-elemento */
 }
 
 #comenzar:after {
-  background-clip: padding-box;
-  background-color: #134B70;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
+    background-clip: padding-box;
+    background-color: #134B70;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
 }
 
 #comenzar:main,
@@ -122,7 +115,7 @@ body {
 }
 
 #puntuacion {
-    display: inline-flex;
+    font-size: 30px;
 }
 
 #cont-puntuacion{
